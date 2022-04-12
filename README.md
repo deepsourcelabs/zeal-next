@@ -1,5 +1,7 @@
 # zeal-next
 
+> ⚠️ Zeal is not fully ready yet for production use. Expect breaking changes to APIs and components.
+
 `zeal`, built for vue 3.
 
 ## Recommended IDE Setup

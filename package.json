@@ -1,6 +1,6 @@
 {
   "name": "zeal-next",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "main": "./dist/zeal-next.js",
   "module": "./dist/zeal-next.mjs",
   "exports": {
