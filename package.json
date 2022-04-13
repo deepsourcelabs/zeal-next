@@ -1,15 +1,22 @@
 {
   "name": "zeal-next",
-  "version": "0.1.0",
+  "version": "0.0.0",
+  "main": "./dist/zeal-next.js",
+  "module": "./dist/zeal-next.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/zeal-next.mjs",
+      "require": "./dist/zeal-next.js"
+    }
+  },
   "scripts": {
-    "dev": "vite",
+    "dev": "start-storybook -p 6006",
     "build": "vue-tsc --noEmit && vite build",
+    "build:storybook": "build-storybook",
     "preview": "vite preview --port 5050",
     "test:unit": "vitest --environment jsdom",
     "typecheck": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "vue": "^3.2.31"
