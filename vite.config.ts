@@ -13,6 +13,7 @@ export default defineConfig({
     }
   },
   build: {
+    emptyOutDir: false,
     lib: {
       entry: path.resolve(__dirname, 'src/main.ts'),
       name: 'zeal-next',
