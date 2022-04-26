@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "main": "./dist/zeal-next.js",
   "module": "./dist/zeal-next.mjs",
+  "types": "./dist/main.d.ts",
   "exports": {
     ".": {
       "import": "./dist/zeal-next.mjs",
@@ -11,7 +12,7 @@
   },
   "scripts": {
     "dev": "start-storybook -p 6006",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --declaration --emitDeclarationOnly && vite build",
     "build:storybook": "build-storybook",
     "preview": "vite preview --port 5050",
     "test:unit": "vitest --environment jsdom",
