@@ -11,5 +11,13 @@ module.exports = {
   ],
   env: {
     'vue/setup-compiler-macros': true
-  }
+  },
+  overrides: [
+    {
+      files: ['**/*.config.js', 'zephyr/**/*.js'],
+      env: {
+        node: true
+      }
+    }
+  ]
 }
