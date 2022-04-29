@@ -1,0 +1,13 @@
+{
+  "workspaceId": "8785",
+  "designSystemId": "10133",
+  "designSystemVersionId": "10321",
+  "brandId": "9684",
+  "exporterId": "99",
+  "workspaceName": "DeepSource",
+  "designSystemName": "Zeal",
+  "designSystemVersionName": "Shared draft",
+  "exporterName": "Zephyr",
+  "write_to": "./zephyr",
+  "description": "Note to our fellow developers: Install Supernova integration from the VSCode marketplace and then our  Zephyr exporter will synchronize design data and generate appropriate code from the  Shared draft design system every time you request it through the extension interface, fully automatically."
+}
