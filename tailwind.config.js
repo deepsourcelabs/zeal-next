@@ -1,14 +1,14 @@
 const plugin = require('tailwindcss/plugin')
 const defaultTheme = require('tailwindcss/defaultTheme')
-const zephyrTokens = require('./zephyr/tailwind-variables')
+// const zephyrTokens = require('./zephyr/tailwind-variables')
 
 module.exports = {
   content: ['./src/components/**/*.{vue,js,ts}'],
   darkMode: false,
   theme: {
-    colors: {
-      ...zephyrTokens.colors
-    },
+    // colors: {
+    //   ...zephyrTokens.colors
+    // },
     container: {
       padding: {
         DEFAULT: '0rem',
