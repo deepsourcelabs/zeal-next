@@ -8,13 +8,17 @@ import { cloneVNode, Fragment } from 'vue'
  * @param {VNode[]} nodes - Array of VNodes
  * @param {boolean} [flattenFragments=false] - Whether to flatten fragments or not. `false` by default.
  */
-const cloneVNodes = (nodes: VNode[], customProps = {}, flattenFragments = false): VNode[] => {
+const cloneVNodes = (
+  nodes: VNode[],
+  customProps = {} as Record<string, unknown>,
+  flattenFragments = false
+): VNode[] => {
   return nodes.reduce((flatArray, child) => {
     if (flattenFragments && child.type === Fragment) {
-      return cloneVNodes(child.children as VNode[], customProps)
+      return cloneVNodes(child.children as VNode[], { ...customProps, ...child.props })
     }
 
-    return flatArray.concat(cloneVNode(child, customProps))
+    return flatArray.concat(cloneVNode(child, { ...customProps, ...child.props }))
   }, [] as VNode[])
 }
 
