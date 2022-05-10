@@ -1,0 +1,9 @@
+
+:root {
+    --border-borderwidth-default: 1px solid #000000;     
+    --border-borderwidth-0: 0px solid #000000;     
+    --border-borderwidth-2: 2px solid #000000;     
+    --border-borderwidth-4: 4px solid #000000;     
+    --border-borderwidth-8: 8px solid #000000;     
+    --border-bordercolor-color: 1px solid #52575c;     
+}

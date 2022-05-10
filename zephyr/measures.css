@@ -1,0 +1,38 @@
+
+:root {
+    --measure-0: 0px;     
+    --measure-px: 1px;     
+    --measure-0-5: 2px;     
+    --measure-1: 4px;     
+    --measure-1-5: 6px;     
+    --measure-2: 8px;     
+    --measure-2-5: 10px;     
+    --measure-3: 12px;     
+    --measure-3-5: 14px;     
+    --measure-4: 16px;     
+    --measure-5: 20px;     
+    --measure-6: 24px;     
+    --measure-7: 28px;     
+    --measure-8: 32px;     
+    --measure-9: 36px;     
+    --measure-10: 40px;     
+    --measure-11: 44px;     
+    --measure-12: 48px;     
+    --measure-14: 56px;     
+    --measure-16: 64px;     
+    --measure-20: 80px;     
+    --measure-24: 96px;     
+    --measure-28: 112px;     
+    --measure-32: 128px;     
+    --measure-36: 144px;     
+    --measure-40: 160px;     
+    --measure-44: 176px;     
+    --measure-48: 192px;     
+    --measure-52: 208px;     
+    --measure-56: 224px;     
+    --measure-60: 240px;     
+    --measure-64: 256px;     
+    --measure-72: 288px;     
+    --measure-80: 320px;     
+    --measure-96: 384px;     
+}

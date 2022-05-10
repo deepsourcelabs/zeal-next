@@ -1,0 +1,8 @@
+
+:root {
+    --shadow-shadow-z1: 2px 2px 6px 0px #050d2133; 
+    --shadow-shadow-z2: 4px 10px 15px 2px #050d2133; 
+    --shadow-shadow-z3: 6px 15px 20px 5px #050d214d; 
+    --shadow-shadow-z-in: 2px 2px 6px 2px #050d2133; 
+    --shadow-shadow-z-in-2: -1px -1px 12px 0px #9a9a9a1a; 
+}

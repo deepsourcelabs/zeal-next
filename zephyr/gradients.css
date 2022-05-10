@@ -1,0 +1,40 @@
+
+:root {
+    --gradient-gradients-flamingo: linear-gradient(
+          97.33deg,
+          #ca9cd0 0%,   
+          #d38972 68.8%,   
+          #a1b1e7 100%  
+        )
+        ;     
+    --gradient-gradients-splash: linear-gradient(
+          124.97deg,
+          #4568dc 0%,   
+          #324daa 100%  
+        )
+        ;     
+    --gradient-gradients-juniper-gradient: linear-gradient(
+          153.53deg,
+          #6ccaa7 0%,   
+          #24996e 100%  
+        )
+        ;     
+    --gradient-gradients-dark-dawn: linear-gradient(
+          124.97deg,
+          #4568dc 0%,   
+          #b06ab3 100%  
+        )
+        ;     
+    --gradient-gradients-dawn: linear-gradient(
+          124.97deg,
+          #7a97fa 0%,   
+          #f977ff 100%  
+        )
+        ;     
+    --gradient-gradients-ocean: linear-gradient(
+          124.97deg,
+          #48f8cf 0%,   
+          #28cbf3 100%  
+        )
+        ;     
+}
