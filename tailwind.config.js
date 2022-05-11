@@ -315,6 +315,13 @@ module.exports = {
 
         addUtilities(utilities, variants('gradients', []))
       }
-    )
+    ),
+    plugin(({ addVariant, e }) => {
+      addVariant('selected', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`selected${separator}${className}`)}[aria-selected=true]`
+        })
+      })
+    })
   ]
 }
