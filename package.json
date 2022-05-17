@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "start-storybook -p 6006",
-    "build": "vue-tsc --declaration --emitDeclarationOnly && vite build",
+    "build": "vue-tsc --declaration --emitDeclarationOnly --project tsconfig.build.json && vite build",
     "build:storybook": "build-storybook",
     "preview": "vite preview --port 5050",
     "test:unit": "vitest --environment jsdom",
