@@ -17,7 +17,9 @@ const Template = (args) => ({
     return { args }
   },
   template: `<z-breadcrumb :separator="args.separator"> 
-      <z-breadcrumb-item v-for="i in args.count" :key="i">{{i}}</z-breadcrumb-item>
+      <z-breadcrumb-item separator="/">start</z-breadcrumb-item>
+      <z-breadcrumb-item v-for="i in args.count" :key="i" :separator="i === args.count ? '/' : '>'">{{i}}</z-breadcrumb-item>
+      <z-breadcrumb-item>end</z-breadcrumb-item>
     </z-breadcrumb>`
 })
 
