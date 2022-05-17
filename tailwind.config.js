@@ -4,7 +4,6 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: ['./src/components/**/*.{vue,js,ts}'],
-  darkMode: false,
   theme: {
     // colors: {
     //   ...zephyrTokens.colors
