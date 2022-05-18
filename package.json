@@ -1,6 +1,9 @@
 {
-  "name": "zeal-next",
+  "name": "@deepsource/zeal-next",
   "version": "0.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/deepsourcelabs/zeal-next",
+  "bugs": "https://github.com/deepsourcelabs/zeal-next/issues",
   "main": "./dist/zeal-next.js",
   "module": "./dist/zeal-next.mjs",
   "types": "./dist/main.d.ts",
