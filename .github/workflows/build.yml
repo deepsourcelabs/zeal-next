@@ -12,8 +12,8 @@ jobs:
         with:
           node-version: '14'
           cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm build
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: pnpm run --if-present build
   test:
     runs-on: ubuntu-latest
     steps:
@@ -25,5 +25,5 @@ jobs:
         with:
           node-version: '14'
           cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm test:unit --passWithNoTests
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: pnpm run --if-present test:unit --passWithNoTests
