@@ -314,6 +314,54 @@ module.exports = {
 
         addUtilities(utilities, variants('gradients', []))
       }
+    ),
+    plugin(
+      /**
+       * Plugin to add icon-* classes for sizing and coloring unplugin-icons.
+       * @see {@link module.exports.theme.gradients}
+       */
+      ({ addUtilities, e, theme }) => {
+        const sizeUtilities = Object.keys(theme('fontSize')).reduce((acc, size) => {
+          const iconSize = theme('fontSize')[size][0]
+          const iconClass = `svg.icon-${e(size)}`
+
+          return {
+            ...acc,
+            [iconClass]: {
+              fontSize: iconSize
+            }
+          }
+        }, {})
+
+        const themeColors = theme('colors')
+        const colorUtilities = Object.keys(themeColors).reduce((acc, color) => {
+          if (typeof themeColors[color] === 'string') {
+            return {
+              ...acc,
+              [`svg.icon-${e(color)}`]: {
+                color: themeColors[color]
+              }
+            }
+          }
+
+          const variants = Object.keys(themeColors[color])
+
+          return {
+            ...acc,
+            ...variants.reduce(
+              (a, variant) => ({
+                ...a,
+                [`svg.icon-${e(color)}-${variant}`]: {
+                  color: themeColors[color][variant]
+                }
+              }),
+              {}
+            )
+          }
+        }, {})
+
+        addUtilities({ ...sizeUtilities, ...colorUtilities })
+      }
     )
   ]
 }

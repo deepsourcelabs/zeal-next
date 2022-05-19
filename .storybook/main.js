@@ -1,4 +1,5 @@
 const { mergeConfig } = require('vite')
+const Icons = require('unplugin-icons/vite')
 const path = require('path')
 const dirPath = path.resolve(__dirname, '../src')
 
@@ -6,6 +7,7 @@ module.exports = {
   async viteFinal(config, { configType }) {
     config.resolve.dedupe = ['@storybook/client-api']
     return mergeConfig(config, {
+      plugins: [Icons({ compiler: 'vue3' })],
       resolve: {
         alias: {
           '@': dirPath
