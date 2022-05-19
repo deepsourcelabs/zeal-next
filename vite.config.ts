@@ -21,7 +21,7 @@ export default defineConfig({
       fileName: (format) => `zeal-next.${format === 'es' ? 'm' : ''}js`
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', 'unplugin-icons', '@iconify-json/lucide', '@vue/compiler-sfc'],
       output: {
         globals: {
           vue: 'Vue'
