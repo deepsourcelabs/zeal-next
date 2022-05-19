@@ -321,36 +321,38 @@ module.exports = {
        * @see {@link module.exports.theme.gradients}
        */
       ({ addUtilities, e, theme }) => {
-        const sizeUtilities = Object.keys(theme('fontSize')).map((size) => {
+        const sizeUtilities = Object.keys(theme('fontSize')).reduce((acc, size) => {
           const iconSize = theme('fontSize')[size][0]
+          const iconClass = `svg.icon-${e(size)}`
 
           return {
-            [`.icon-${e(size)}`]: {
+            ...acc,
+            [iconClass]: {
               fontSize: iconSize
             }
           }
-        })
+        }, {})
 
         const themeColors = theme('colors')
-        const colorUtilities = Object.keys(themeColors).reduce((acc, key) => {
-          if (typeof themeColors[key] === 'string') {
+        const colorUtilities = Object.keys(themeColors).reduce((acc, color) => {
+          if (typeof themeColors[color] === 'string') {
             return {
               ...acc,
-              [`.icon-${e(key)}`]: {
-                color: themeColors[key]
+              [`svg.icon-${e(color)}`]: {
+                color: themeColors[color]
               }
             }
           }
 
-          const variants = Object.keys(themeColors[key])
+          const variants = Object.keys(themeColors[color])
 
           return {
             ...acc,
             ...variants.reduce(
               (a, variant) => ({
                 ...a,
-                [`.icon-${e(key)}-${variant}`]: {
-                  color: themeColors[key][variant]
+                [`svg.icon-${e(color)}-${variant}`]: {
+                  color: themeColors[color][variant]
                 }
               }),
               {}
