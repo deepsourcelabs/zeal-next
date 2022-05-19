@@ -1,5 +1,5 @@
 const unPluginConfig = {
-  scale: 1.2,
+  scale: 1,
   defaultClass: 'z-icon',
   compiler: 'vue3'
 }
