@@ -1,17 +1,22 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { useSlots, cloneVNode, isVNode } from 'vue'
 
 export interface ZBreadcrumbProps {
   isCurrent?: boolean
   separator?: string
 }
 
-withDefaults(defineProps<ZBreadcrumbProps>(), { isCurrent: false, separator: '/' })
+const props = withDefaults(defineProps<ZBreadcrumbProps>(), { isCurrent: false, separator: '/' })
+const itemNode = (useSlots().default?.() || []).pop()
+
+const breadcrumb = isVNode(itemNode)
+  ? cloneVNode(itemNode, { 'aria-current': props.isCurrent ? 'page' : null })
+  : undefined
 </script>
 
 <template>
   <li class="flex items-center gap-x-2" :class="[isCurrent ? 'text-slate-900' : 'text-slate-400']">
-    <slot></slot>
-    <span v-if="!isCurrent">{{ separator }}</span>
+    <breadcrumb />
+    <span v-if="!isCurrent" aria-hidden="true">{{ separator }}</span>
   </li>
 </template>
