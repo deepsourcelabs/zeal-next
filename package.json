@@ -21,7 +21,7 @@
     "build": "vue-tsc --declaration --emitDeclarationOnly --project tsconfig.build.json && vite build",
     "build:storybook": "build-storybook",
     "preview": "vite preview --port 5050",
-    "test:unit": "vitest --environment jsdom",
+    "test:unit": "vitest --environment jsdom --coverage",
     "typecheck": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
