@@ -13,11 +13,13 @@ jobs:
           node-version: '14'
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile --ignore-scripts
-      - run: pnpm run --if-present build
+      - run: pnpm run build
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: pnpm/action-setup@v2
         with:
           version: 7.x.x
@@ -26,4 +28,10 @@ jobs:
           node-version: '14'
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile --ignore-scripts
-      - run: pnpm run --if-present test:unit --passWithNoTests
+      - run: pnpm run test:unit
+      - name: Report results to DeepSource
+        run: |
+          curl https://deepsource.io/cli | sh
+          ./bin/deepsource report --analyzer test-coverage --key javascript --value-file coverage/cobertura-coverage.xml
+        env:
+          DEEPSOURCE_DSN: ${{ secrets.DEEPSOURCE_DSN }}

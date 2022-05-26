@@ -28,5 +28,22 @@ export default defineConfig({
         }
       }
     }
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    coverage: {
+      reporter: ['text', 'html', 'cobertura'],
+      exclude: [
+        '*.config.{js,ts}',
+        '.storybook/*',
+        '**/*.stories.{js,ts}',
+        'src/main.ts',
+        '**/*.d.ts',
+        '.eslintrc.cjs',
+        '**/__tests__/*'
+      ],
+      all: true
+    }
   }
 })

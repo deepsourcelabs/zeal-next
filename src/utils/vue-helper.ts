@@ -15,7 +15,12 @@ const cloneVNodes = (
 ): VNode[] => {
   return nodes.reduce((flatArray, child) => {
     if (flattenFragments && child.type === Fragment) {
-      return cloneVNodes(child.children as VNode[], { ...customProps, ...child.props })
+      return flatArray.concat(
+        cloneVNodes(child.children as VNode[], {
+          ...customProps,
+          ...child.props
+        })
+      )
     }
 
     return flatArray.concat(cloneVNode(child, { ...customProps, ...child.props }))
