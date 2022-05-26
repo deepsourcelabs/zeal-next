@@ -1,6 +1,9 @@
 {
   "recommendations": [
     "Vue.volar",
-    "Vue.vscode-typescript-vue-plugin"
+    "zixuanchen.vitest-explorer",
+    "cpylua.language-postcss",
+    "csstools.postcss",
+    "bradlc.vscode-tailwindcss"
   ]
 }
